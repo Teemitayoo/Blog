@@ -3,9 +3,15 @@ const prisma = new PrismaClient()
 
 
 async function main(){
-const user = await prisma.user.create({data:{name: "sally"}})
+await prisma.user.deleteMany()
+const user = await prisma.user.create({
+    data:{
+        name : "Kyle",
+        email : "Kyle@test.com",
+        age:27
+    }
+})
 console.log(user)
-
 }
 
 main()
